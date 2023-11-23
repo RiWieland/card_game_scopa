@@ -24,3 +24,12 @@ class card_player(card):
     '''    
     def __init__(self):
         super().__init__
+
+class card_open(card):
+    '''
+    card on the hand of the player
+    '''    
+    def __init__(self):
+        super().__init__
+        
+
