@@ -2,8 +2,7 @@ import itertools
 import random
 from typing import List
 from cards import card, card_player, card_offset, card_open
-from iteration_utilities import grouper
-
+from utils import remove_card, remove_cards_idx,shuffle
 
 class dealer:
     def create_deck() -> list:
@@ -19,7 +18,7 @@ class dealer:
 
         return deck
     
-    def shuffle(deck:List[card]) -> List[card]:
+    def shuffles(deck:List[card]) -> List[card]:
         '''
         shuffles the deck
         '''
@@ -33,11 +32,20 @@ class dealer:
         - assign cards to players
         - assign cards to board
         '''
-        shuffle_deck = dealer.shuffle(deck)
-        cards_open = deck[0:4]
+        shuffle_deck = shuffle(deck)
+        print(shuffle_deck)
+        exit()
+        cards_open = shuffle_deck[0:4]
         cards_player_1 = []
         cards_player_2 = []
-        
+        print(len(shuffle_deck))
+        r = range(1,3)
+
+        shuffle_deck = remove_cards_idx(shuffle_deck,'1','2','3' )
+        print(len(shuffle_deck))
+
+        '''
+
         chunk_size = 3
 
         for card_ in deck[5:]:
@@ -45,7 +53,7 @@ class dealer:
                 cards_player_1.append(card_)
             else :
                 cards_player_2.append(card_)
-        
+        '''
         return cards_player_1, cards_player_2, cards_open
     
 class deck:
