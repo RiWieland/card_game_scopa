@@ -1,5 +1,5 @@
 import random
-
+import itertools
 from typing import List
 from cards import card
 
@@ -35,3 +35,35 @@ def shuffle(deck:List[card]):
         '''
         random.shuffle(deck)
         return deck
+
+def serve_player_cards(deck:List[card]) -> (List[card],List[card],List[card]):
+    '''
+    - when called the dealer passes cards to player
+    - cards are removed from the deck
+    '''
+    player_1_cards = []
+    player_2_cards = []
+    idx_list = []
+    for idx, card_ in enumerate(itertools.islice(deck, 6)):
+        if len(deck)/2 !=0:
+            player_1_cards.append(card_)
+            idx_list.append(idx)
+
+        if len(deck)/2 ==0:
+            player_2_cards.append(card_)
+            idx_list.append(idx)
+
+    remaining_deck = deck[max(idx_list)+1:]
+    return remaining_deck, player_1_cards, player_2_cards
+
+def serve_board_deck(deck: List[card], num:int=4)->(List[card],List[card]):
+    '''
+    fills cards on the board
+    '''
+    board_cards = []
+    idx_list = []
+    for idx, card_ in enumerate(itertools.islice(deck, 4)):
+        board_cards.append(card_)
+        idx_list.append(idx)
+    remaining_deck = deck[max(idx_list)+1:]
+    return remaining_deck, board_cards
