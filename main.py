@@ -5,26 +5,23 @@ from dealer import dealer
 from pprint import pprint
 from typing import List
 from utils import print_deck, draw_random_card
-
+from players import player
+from board import board
 # round one
 
 if __name__ == "__main__":
-    
+    '''
+    Every round takes place in main
+    '''
     deck = dealer.create_deck()
-    print(len(deck))
+    final_deck, palyer_cards_1, player_cards_2, cards_open = dealer.start_game(deck)
 
-    dealer.start_game(deck)    
+    player_a = player(palyer_cards_1)
+    player_b = player(palyer_cards_1)
+    board = board(cards_open, card_offset=[])
 
-    c1 = card("caro", "2")
-    c2 = card("pik", "4")
 
-    list_cards = [c1, c2]
-    print(type(c1))
-    c1.__class__ = card_offset
-    print(c1.value)
 
-    print_deck(deck)
-    print(draw_random_card(deck))
 
 
 

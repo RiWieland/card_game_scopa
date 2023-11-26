@@ -33,11 +33,11 @@ class dealer:
         - assign cards to board
         '''
         shuffle_deck = shuffle(deck)
-        remaining_deck, cards_open = serve_board_deck(shuffle_deck)
-        
-        play_deck, palyer_cards_1, player_cards_2 = serve_player_cards(remaining_deck)
 
-        return play_deck, palyer_cards_1, player_cards_2, cards_open
+        remaining_deck, cards_open = serve_board_deck(shuffle_deck)
+        final_deck, palyer_cards_1, player_cards_2 = serve_player_cards(remaining_deck)
+
+        return final_deck, palyer_cards_1, player_cards_2, cards_open
     
 class deck:
     def __init__(self, deck: List[card]):
