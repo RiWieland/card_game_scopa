@@ -5,7 +5,10 @@ from cards import card, card_player, card_offset, card_open
 from utils import remove_card, remove_cards_idx,shuffle,serve_board_deck,serve_player_cards
 
 class dealer:
-    def create_deck() -> list:
+    def __init__(self):
+        self.deck = self.create_deck()
+
+    def create_deck(self) -> list:
         '''
         create deck
         '''
@@ -18,24 +21,24 @@ class dealer:
 
         return deck
     
-    def shuffles(deck:List[card]) -> List[card]:
+    def shuffles(self) -> List[card]:
         '''
         shuffles the deck
         '''
-        shuffle_deck = random.shuffle(deck)
+        shuffle_deck = random.shuffle(self.deck)
         return shuffle_deck
 
-    def start_game(deck:List[card]) -> (List[card_player], List[card_player], List[card_open]) :
+    def start_game(self) -> (List[card_player], List[card_player], List[card_open]) :
         '''
         Start game contains 
         - shuffling
         - assign cards to players
         - assign cards to board
         '''
-        shuffle_deck = shuffle(deck)
+        self.deck = shuffle(self.deck)
 
-        remaining_deck, cards_open = serve_board_deck(shuffle_deck)
-        final_deck, palyer_cards_1, player_cards_2 = serve_player_cards(remaining_deck)
+        self.deck, cards_open = serve_board_deck(self.deck)
+        final_deck, palyer_cards_1, player_cards_2 = serve_player_cards(self.deck)
 
         return final_deck, palyer_cards_1, player_cards_2, cards_open
     
