@@ -12,14 +12,7 @@ class dealer:
     def get_deck(cls, deck: List[card]):
         return cls(deck)
     
-    def shuffles(self) -> List[card]:
-        '''
-        shuffles the deck
-        '''
-        shuffle_deck = random.shuffle(self.deck)
-        return shuffle_deck
-
-    def start_game(self) -> (List[card_player], List[card_player], List[card_open]) :
+    def initial_serve(self) -> (List[card_player], List[card_player], List[card_open]) :
         '''
         Start game contains 
         - shuffling
