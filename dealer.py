@@ -5,21 +5,12 @@ from cards import card, card_player, card_offset, card_open
 from utils import remove_card, remove_cards_idx,shuffle,serve_board_deck,serve_player_cards
 
 class dealer:
-    def __init__(self):
-        self.deck = self.create_deck()
+    def __init__(self, deck):
+        self.deck = deck
 
-    def create_deck(self) -> list:
-        '''
-        create deck
-        '''
-        symbol = ['Swords',	'Cups',	'Coins', 'Batons']
-        values = [*range(1, 11, 1)]
-
-        deck = []
-        for element in itertools.product(symbol, values):
-            deck.append(card(element[0], element[1]))
-
-        return deck
+    @classmethod
+    def get_deck(cls, deck: List[card]):
+        return cls(deck)
     
     def shuffles(self) -> List[card]:
         '''

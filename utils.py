@@ -3,6 +3,17 @@ import itertools
 from typing import List
 from cards import card
 
+def create_deck() -> list:
+    '''
+    create deck
+    '''
+    symbol = ['Swords',	'Cups',	'Coins', 'Batons']
+    values = [*range(1, 11, 1)]
+    deck = []
+    for element in itertools.product(symbol, values):
+        deck.append(card(element[0], element[1]))
+    return deck
+
 def print_deck(deck: List[card]):
     for card_ in deck:
         print(card_)
