@@ -78,3 +78,4 @@ def serve_board_deck(deck: List[card], num:int=4)->(List[card],List[card]):
         idx_list.append(idx)
     remaining_deck = deck[max(idx_list)+1:]
     return remaining_deck, board_cards
+
