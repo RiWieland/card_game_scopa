@@ -79,3 +79,6 @@ def serve_board_deck(deck: List[card], num:int=4)->(List[card],List[card]):
     remaining_deck = deck[max(idx_list)+1:]
     return remaining_deck, board_cards
 
+def list_values(cards= List[card]) -> list:
+    
+    return [x.value for x in cards ]
