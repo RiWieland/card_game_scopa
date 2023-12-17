@@ -56,11 +56,10 @@ def serve_player_cards(deck:List[card]) -> (List[card],List[card],List[card]):
     player_2_cards = []
     idx_list = []
     for idx, card_ in enumerate(itertools.islice(deck, 6)):
-        if len(deck)/2 !=0:
+        if (idx % 2) == 0:
             player_1_cards.append(card_)
             idx_list.append(idx)
-
-        if len(deck)/2 ==0:
+        else:
             player_2_cards.append(card_)
             idx_list.append(idx)
 
