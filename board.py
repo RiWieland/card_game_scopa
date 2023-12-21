@@ -12,4 +12,6 @@ class board:
 
         return f'Cards("{self.cards_open[0]}", "{self.cards_open[1]}", "{self.cards_open[2]}", "{self.cards_open[3]}")'
 
-    
+    def add_card_to_cards_open(self, card_:card):
+        self.cards_open.append(card_)
+
