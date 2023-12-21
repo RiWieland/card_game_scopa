@@ -40,6 +40,9 @@ def remove_card(deck: List[card], remove_card: card = card("",0), *remove_idx) -
 
     return update_deck
 
+def add_card_to_deck(deck: List[card], card):
+    return deck.append(card)
+
 def shuffle(deck:List[card]):
         '''
         shuffles the deck
