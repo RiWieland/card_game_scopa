@@ -31,14 +31,9 @@ def remove_cards_idx(deck: List[card], *remove_idx) -> List[card]:
 
     return update_deck
 
-def remove_card(deck: List[card], remove_card: card = card("",0), *remove_idx) -> List[card]:
-    update_deck = []
-    if remove_idx != 0:
-        update_deck = deck.pop(remove_idx)
-    if remove_card != card("",0):
-        update_deck = deck.remove(remove_card)
-
-    return update_deck
+def remove_card_from_deck(deck: List[card], remove_card: card) -> List[card]:
+    deck.remove(remove_card)
+    return deck
 
 def add_card_to_deck(deck: List[card], card):
     return deck.append(card)

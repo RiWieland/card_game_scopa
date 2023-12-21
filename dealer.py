@@ -2,7 +2,7 @@ import itertools
 import random
 from typing import List
 from cards import card, card_player, card_offset, card_open
-from utils import remove_card, remove_cards_idx,shuffle,serve_board_deck,serve_player_cards
+from utils import remove_card_from_deck, remove_cards_idx,shuffle,serve_board_deck,serve_player_cards
 
 class dealer:
     def __init__(self, deck):
