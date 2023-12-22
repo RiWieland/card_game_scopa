@@ -6,7 +6,7 @@ class player:
     def __init__(self, cards_hand:List[card_player]):
         self.cards_hand = cards_hand
 
-    def put_card_to_card_open(self, card:card):
+    def play_card(self, card:card):
         '''
         action of putting a specific card to the table
         '''
