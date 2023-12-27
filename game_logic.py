@@ -6,7 +6,7 @@ from typing import List
 from utils import get_values
 
 from cards import card, card_player, card_offset, card_open
-
+from players import player
 
 def return_card_match(cards_open:List[card], cards_player:List[card]) -> list:
     '''
@@ -29,3 +29,13 @@ def prob_scopa_this_round(card_open:List[card], card_offset:List[card], cards_pl
     else:
         pass
     return prob
+
+def get_all_players_cards() -> List[card]: 
+    '''
+    function access the players cards over class attributes 
+    '''
+    list_cards =[] 
+    for p in player.all_players_cards:
+        temp_cards = [x for x in p.cards_hand]
+        list_cards += temp_cards
+    return list_cards
