@@ -1,6 +1,5 @@
 
 class card:
-
     '''
     Class for card
     '''
@@ -16,7 +15,6 @@ class card_offset(card):
     '''
     cards that are thrown away
     '''
-
     def __init__(self):
         super().__init__
 

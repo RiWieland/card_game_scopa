@@ -1,9 +1,7 @@
 from pydantic import BaseModel
 from typing import List
 
-from cards import card, card_offset
+from cards import card
 
-class player_card_class(BaseModel):
-    player: str
+class export_card_class(BaseModel):
     cards: List[card]
-
