@@ -2,8 +2,9 @@ from cards import card, card_open, card_offset
 from typing import List
 
 class board:
-    def __init__(self, cards_open: List[card_open]):
-        self.cards_open = cards_open
+    def __init__(self, cards_open_: List[card_open], cards_offset_):
+        self.cards_open = cards_open_
+        self.cards_offset = cards_offset_
 
     def __str__(self):
         '''
@@ -15,3 +16,5 @@ class board:
     def add_card_to_cards_open(self, card_:card):
         self.cards_open.append(card_)
 
+    def add_card_to_cards_offset(self, card_:card):
+        self.cards_offset.append(card_)
