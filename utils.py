@@ -79,3 +79,4 @@ def serve_board_deck(deck: List[card], num:int=4)->(List[card],List[card]):
 def get_values(cards= List[card]) -> list:
 
     return [x.value for x in cards ]
+

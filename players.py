@@ -3,8 +3,10 @@ from cards import card, card_player, card_offset
 from utils import remove_card_from_deck, add_card_to_deck
 
 class player:
+
     def __init__(self, cards_hand:List[card_player]):
         self.cards_hand = cards_hand
+
 
     def play_card(self, card:card):
         '''

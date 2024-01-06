@@ -1,5 +1,6 @@
 
 class card:
+
     '''
     Class for card
     '''
@@ -15,13 +16,7 @@ class card_offset(card):
     '''
     cards that are thrown away
     '''
-    def __init__(self):
-        super().__init__
 
-class card_player(card):
-    '''
-    card on the hand of the player
-    '''    
     def __init__(self):
         super().__init__
 
@@ -30,6 +25,16 @@ class card_open(card):
     card on the hand of the player
     '''    
     def __init__(self):
+        self._registry.append(self)
         super().__init__
+
+
+class card_player(card):
+    '''
+    card on the hand of the player
+    '''    
+    def __init__(self):
+        super().__init__
+
         
 
