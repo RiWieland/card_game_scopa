@@ -2,6 +2,10 @@ from cards import card, card_open, card_offset
 from typing import List
 
 class board:
+    '''
+    board holds cards that are open and cards that are thrown away
+    '''
+
     def __init__(self, cards_open_: List[card_open], cards_offset_):
         self.cards_open = cards_open_
         self.cards_offset = cards_offset_
@@ -10,7 +14,6 @@ class board:
         '''
         function prints the board with the information that is observable for the player
         '''
-
         return f'Cards("{self.cards_open[0]}", "{self.cards_open[1]}", "{self.cards_open[2]}", "{self.cards_open[3]}")'
 
     def add_card_to_cards_open(self, card_:card):

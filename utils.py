@@ -15,6 +15,9 @@ def create_deck() -> list:
     return deck
 
 def print_deck(deck: List[card]):
+    '''
+    helping function for printing List of cards
+    '''
     for card_ in deck:
         print(card_)
 
@@ -77,6 +80,5 @@ def serve_board_deck(deck: List[card], num:int=4)->(List[card],List[card]):
     return remaining_deck, board_cards
 
 def get_values(cards= List[card]) -> list:
-
     return [x.value for x in cards ]
 

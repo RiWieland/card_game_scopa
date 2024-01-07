@@ -3,7 +3,9 @@ from cards import card, card_player, card_offset
 from utils import remove_card_from_deck, add_card_to_deck
 
 class player:
-
+    '''
+    super class for player
+    '''
     def __init__(self, cards_hand:List[card_player]):
         self.cards_hand = cards_hand
 
@@ -16,11 +18,9 @@ class player:
             self.cards_hand = remove_card_from_deck(self.cards_hand, card)
         else:
             raise Exception("This card is not a member of the players deck")
-            
-
 
 class player_smart(player):
-
+    
     def receive_cards_open(self, cards_open:List[card]):
         '''
         observed cards open
@@ -35,4 +35,8 @@ class player_smart(player):
 
     
 class player_random(player):
+    '''
+    should be used by the human
+    ATM random actions
+    '''
     pass
